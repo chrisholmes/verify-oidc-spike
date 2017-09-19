@@ -52,4 +52,14 @@ ActiveRecord::Schema.define(version: 20170919105203) do
     t.index ["uid"], name: "index_oauth_applications_on_uid", unique: true
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.date "date_of_birth"
+    t.string "pid"
+    t.string "nhs_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end
