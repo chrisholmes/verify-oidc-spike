@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 
+gem 'dotenv-rails', groups: [:development, :test]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
@@ -55,3 +56,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'doorkeeper'
 gem 'doorkeeper-openid_connect'
+
