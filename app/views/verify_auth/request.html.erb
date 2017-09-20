@@ -1,0 +1,4 @@
+<%= form_tag(@verify_request.ssoLocation, authenticity_token: false) do %>
+  <%= hidden_field_tag(:SAMLRequest, @verify_request.samlRequest) %>
+  <%= submit_tag("Submit to Verify") %>
+<% end %>

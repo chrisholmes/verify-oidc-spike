@@ -57,3 +57,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'doorkeeper'
 gem 'doorkeeper-openid_connect'
 
+gem 'http'

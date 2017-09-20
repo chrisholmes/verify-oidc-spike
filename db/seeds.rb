@@ -4,4 +4,5 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+pid = "oiewuroiqweurwqoeir"
+User.create(pid: pid, first_name: "Clark", last_name: "kent", nhs_number: "1234567890")
