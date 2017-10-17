@@ -4,10 +4,13 @@ Doorkeeper.configure do
 
   # This block will be called to check whether the resource owner is authenticated or not.
   resource_owner_authenticator do
-    if current_user
-      current_user
+    user = User.find_by_pid(session[:user_pid])
+    if user
+      user
     else
-      redirect_to(request_to_verify_url)
+      reset_session
+      session[:user_return_to] = request.fullpath
+      redirect_to(request_url)
       nil
     end
   end
@@ -57,7 +60,7 @@ Doorkeeper.configure do
   # For more information go to
   # https://github.com/doorkeeper-gem/doorkeeper/wiki/Using-Scopes
   # default_scopes  :public
-  optional_scopes :oidc
+  optional_scopes :openid, :profile
 
   # Change the way client credentials are retrieved from the request object.
   # By default it retrieves first from the `HTTP_AUTHORIZATION` header, then
